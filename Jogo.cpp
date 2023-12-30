@@ -6,21 +6,22 @@ class Personagem
 {
 
 private:
-    int vida;
+    uint16_t vidaMaxima;
+    uint16_t vidaAtual;
     string nome;
 
 public:
-    Personagem(string nome, int vida)
+    Personagem(string nome, int vidaMaxima)
     {
 
         this->nome = nome;
-        this->vida = vida;
+        this->vidaMaxima = vidaMaxima;
     }
 
-    int getVida()
+    uint16_t getVida()
     {
 
-        return vida;
+        return vidaMaxima;
     }
 
     string getNome()
