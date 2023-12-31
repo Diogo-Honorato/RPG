@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "../Headers/Personagem/Personagem.hpp"
+#include "../../Headers/Personagem/Personagem.hpp"
 
 Personagem::Personagem(std::string nome, int vidaMaxima)
 {
