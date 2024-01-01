@@ -1,16 +1,17 @@
 #include <iostream>
-#include "../../Headers/Personagem/Personagem.hpp"
+#include "../../Headers/Personagens/Personagem.hpp"
+#include "../../Headers/Personagens/Player.hpp"
 
 int main()
 {
 
-    Personagem player("DIOGO", 100);
+    Player player;
 
-    std::cout << "Nome do player: " << player.getNome() << std::endl;
+    player.definirAtributos("Diogo",100,10);
+    player.calcularVidaAtual(-40);
 
-    player.calcularVidaAtual(-20);
-    player.calcularVidaAtual(5);
-    
+    std::cout << "Nome do player: " << player.getNome() << std::endl; 
     std::cout << "VidaMax: " << player.getVidaMaxima() << std::endl;
     std::cout << "VidaAtual: " << player.getVidaAtual() << std::endl;
+    std::cout << "Nivel: " << player.getNivelPersonagem() << std::endl;
 }
