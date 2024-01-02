@@ -1,38 +1,32 @@
 #ifndef _PERSONAGENS_
 #define _PERSONAGENS_
+#include "../Vida/Vida.hpp"
 #include <string>
 
 class Personagem
 {
 
 private:
-    uint vidaMaxima;
-    uint vidaAtual;
+    Vida *vidaPersonagem;
     uint nivelPersonagem;
     std::string nome;
 
 public:
-    uint getVidaMaxima();
-
-    uint getVidaAtual();
-
     uint getNivelPersonagem();
 
     std::string getNome();
 
+    Vida *getVidaPersonagem();
+
 protected:
-    void setVidaMaxima(uint valorVidaMaxima);
-
-    void setVidaAtual(uint valorVidaAtual);
-
     void setNivelPersonagem(uint valorNivelPersonagem);
 
     void setNome(std::string nomePersonagem);
 
 public:
-    void definirAtributos(std::string nomePersonagem, uint valorVidaMaxima, uint valorNivelPersonagem);
+    void definirAtributos(std::string nomePersonagem, uint valorVidaMaxima, uint valorDefesa, uint valorNivelPersonagem);
 
-    uint calcularVidaAtual(int pontosVida);
+    ~Personagem();
 };
 
 #endif

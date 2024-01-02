@@ -3,18 +3,6 @@
 #include "../../Headers/Personagens/Personagem.hpp"
 
 // GETTERS
-uint Personagem::getVidaMaxima()
-{
-
-    return vidaMaxima;
-}
-
-uint Personagem::getVidaAtual()
-{
-
-    return vidaAtual;
-}
-
 uint Personagem::getNivelPersonagem()
 {
 
@@ -27,19 +15,13 @@ std::string Personagem::getNome()
     return nome;
 }
 
+Vida *Personagem::getVidaPersonagem()
+{
+
+    return vidaPersonagem;
+}
+
 // SETTERS
-void Personagem::setVidaMaxima(uint valorVidaMaxima)
-{
-
-    vidaMaxima = valorVidaMaxima;
-}
-
-void Personagem::setVidaAtual(uint valorVidaAtual)
-{
-
-    vidaAtual = valorVidaAtual;
-}
-
 void Personagem::setNivelPersonagem(uint valorNivelPersonagem)
 {
 
@@ -51,21 +33,15 @@ void Personagem::setNome(std::string nomePersonagem)
 
     nome = nomePersonagem;
 }
-//*****************
 
-void Personagem::definirAtributos(std::string nomePersonagem, uint valorVidaMaxima, uint valorNivelPersonagem)
+void Personagem::definirAtributos(std::string nomePersonagem, uint valorVidaMaxima, uint valorDefesa, uint valorNivelPersonagem)
 {
-
     nome = nomePersonagem;
-    vidaMaxima = valorVidaMaxima;
-    vidaAtual = valorVidaMaxima;
+    vidaPersonagem = new Vida(valorVidaMaxima, valorDefesa);
     nivelPersonagem = valorNivelPersonagem;
 }
 
-uint Personagem::calcularVidaAtual(int pontosVida)
+Personagem::~Personagem()
 {
-
-    vidaAtual = vidaAtual + pontosVida;
-
-    return vidaAtual;
+    delete vidaPersonagem;
 }

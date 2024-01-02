@@ -34,6 +34,10 @@ obj_dirs:
 run:$(EXECUTABLE)
 	@./$(EXECUTABLE)
 
+leak:$(EXECUTABLE)
+	@valgrind --leak-check=full ./$(EXECUTABLE)
+
+
 # Limpar arquivos objeto e o executável
 clean:
 	@rm -rf $(OBJ_DIR) $(EXECUTABLE)
