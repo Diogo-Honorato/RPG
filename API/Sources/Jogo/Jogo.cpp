@@ -11,11 +11,11 @@ int main()
 
     std::cout << "Nome do player: " << player.getNome() << std::endl;
 
-    std::cout << "VidaMax: " << player.getVidaPersonagem()->getVidaMaxima() << std::endl;
+    std::cout << "VidaMax: " << player.getVidaPersonagem().getVidaMaxima() << std::endl;
 
-    std::cout << "VidaAtual: " << player.getVidaPersonagem()->getVidaAtual() << std::endl;
+    std::cout << "VidaAtual: " << player.getVidaPersonagem().getVidaAtual() << std::endl;
 
-    std::cout << "Defesa: " << player.getVidaPersonagem()->getVidaDefesa() << std::endl;
+    std::cout << "Defesa: " << player.getVidaPersonagem().getVidaDefesa() << std::endl;
 
     std::cout << "Nivel: " << player.getNivelPersonagem() << std::endl;
 }

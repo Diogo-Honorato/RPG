@@ -3,7 +3,6 @@
 
 class Vida
 {
-
 private:
     uint vidaMaxima;
     uint vidaAtual;
@@ -12,6 +11,8 @@ private:
 public:
     Vida(uint vidaMaxima, uint vidaDefesa);
 
+    Vida();
+    
     uint getVidaMaxima();
 
     uint getVidaAtual();

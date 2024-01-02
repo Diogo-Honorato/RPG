@@ -15,7 +15,7 @@ std::string Personagem::getNome()
     return nome;
 }
 
-Vida *Personagem::getVidaPersonagem()
+Vida Personagem::getVidaPersonagem()
 {
 
     return vidaPersonagem;
@@ -37,11 +37,6 @@ void Personagem::setNome(std::string nomePersonagem)
 void Personagem::definirAtributos(std::string nomePersonagem, uint valorVidaMaxima, uint valorDefesa, uint valorNivelPersonagem)
 {
     nome = nomePersonagem;
-    vidaPersonagem = new Vida(valorVidaMaxima, valorDefesa);
+    vidaPersonagem = Vida(valorVidaMaxima, valorDefesa);
     nivelPersonagem = valorNivelPersonagem;
-}
-
-Personagem::~Personagem()
-{
-    delete vidaPersonagem;
 }

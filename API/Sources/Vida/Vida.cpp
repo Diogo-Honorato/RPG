@@ -47,3 +47,10 @@ Vida::Vida(uint vidaMaxima, uint vidaDefesa)
     this->vidaAtual = vidaMaxima;
     this->vidaDefesa = vidaDefesa;
 }
+
+Vida::Vida(){
+
+    vidaMaxima = 0;
+    vidaAtual = 0;
+    vidaDefesa = 0;
+}
