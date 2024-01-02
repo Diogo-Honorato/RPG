@@ -19,7 +19,7 @@ public:
 
     uint getVidaDefesa();
 
-protected:
+public:
     void setVidaMaxima(uint valorVidaMaxima);
 
     void setVidaAtual(int valorVidaAtual);
