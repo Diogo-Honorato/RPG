@@ -22,21 +22,32 @@ Vida Personagem::getVidaPersonagem()
 }
 
 // SETTERS
-void Personagem::setNivelPersonagem(uint valorNivelPersonagem)
+bool Personagem::setNivelPersonagem(uint valorNivelPersonagem)
 {
+    if(valorNivelPersonagem < 0){
 
+        return false;
+    }
     nivelPersonagem = valorNivelPersonagem;
+
+    return true;
 }
 
-void Personagem::setNome(std::string nomePersonagem)
+std::string Personagem::setNome(std::string nomePersonagem)
 {
+    if(nomePersonagem.length() < 3){
+
+        return NULL;
+    }
 
     nome = nomePersonagem;
+
+    return nome;
 }
 
 void Personagem::definirAtributos(std::string nomePersonagem, uint valorVidaMaxima, uint valorDefesa, uint valorNivelPersonagem)
 {
-    nome = nomePersonagem;
+    setNome(nomePersonagem);
+    setNivelPersonagem(valorNivelPersonagem);
     vidaPersonagem = Vida(valorVidaMaxima, valorDefesa);
-    nivelPersonagem = valorNivelPersonagem;
 }

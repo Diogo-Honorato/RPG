@@ -19,9 +19,9 @@ public:
     Vida getVidaPersonagem();
 
 protected:
-    void setNivelPersonagem(uint valorNivelPersonagem);
+    bool setNivelPersonagem(uint valorNivelPersonagem);
 
-    void setNome(std::string nomePersonagem);
+    std::string setNome(std::string nomePersonagem);
 
 public:
     void definirAtributos(std::string nomePersonagem, uint valorVidaMaxima, uint valorDefesa, uint valorNivelPersonagem);

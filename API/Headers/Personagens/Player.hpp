@@ -13,7 +13,9 @@ public:
     uint getExperiencia();
 
 public:
-    void definirExperiencia(uint valorExperiencia);
+    bool setExperiencia(uint valorExperiencia);
+
+    void definirAtributos(std::string nomePersonagem, uint valorVidaMaxima, uint valorDefesa, uint valorNivelPersonagem, uint valorExperiencia);
 };
 
 #endif

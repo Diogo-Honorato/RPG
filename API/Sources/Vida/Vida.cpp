@@ -48,18 +48,12 @@ bool Vida::setVidaDefesa(int valorVidaDefesa)
 }
 
 //Construtores
-Vida::Vida(uint vidaMaxima, uint vidaDefesa)
+Vida::Vida(uint valorVidaMaxima = 1, uint valorDefesa = 0) : vidaMaxima(valorVidaMaxima), vidaDefesa(valorDefesa)
 {
     setVidaDefesa(vidaDefesa);
     setVidaMaxima(vidaMaxima);
 }
 
-Vida::Vida(){
-
-    vidaMaxima = 0;
-    vidaAtual = 0;
-    vidaDefesa = 0;
-}
 
 //Fuçoes Membro
 uint Vida::calcularDanoSofrido(uint dano){

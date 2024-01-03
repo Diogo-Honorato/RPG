@@ -9,9 +9,7 @@ private:
     uint vidaDefesa;
 
 public:
-    Vida(uint vidaMaxima, uint vidaDefesa);
-
-    Vida();
+    Vida(uint vidaMaxima = 1, uint vidaDefesa = 0);
     
     uint getVidaMaxima();
 
