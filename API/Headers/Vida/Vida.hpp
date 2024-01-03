@@ -19,12 +19,14 @@ public:
 
     uint getVidaDefesa();
 
-public:
-    void setVidaMaxima(uint valorVidaMaxima);
+    uint calcularDanoSofrido(uint dano);
 
-    void setVidaAtual(int valorVidaAtual);
+    uint calcularCura(uint valorCura);
 
-    void setVidaDefesa(int valorVidaDefesa);
+protected:
+    bool setVidaMaxima(uint valorVidaMaxima);
+
+    bool setVidaDefesa(int valorVidaDefesa);
 };
 
 #endif
