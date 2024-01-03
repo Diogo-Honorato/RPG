@@ -22,7 +22,7 @@ bool Player::setExperiencia(uint valorExperiencia)
 
 }
 
-void Player::definirAtributos(std::string nomePersonagem, uint valorVidaMaxima, uint valorDefesa, uint valorNivelPersonagem, uint valorExperiencia){
-
-    
+Player::Player(std::string nomePersonagem, uint valorVidaMaxima, uint valorDefesa, uint valorNivelPersonagem, uint valorExperiencia) : Personagem(nomePersonagem, valorVidaMaxima, valorDefesa, valorNivelPersonagem) , experiencia(valorExperiencia)
+{
+    setExperiencia(experiencia);
 }

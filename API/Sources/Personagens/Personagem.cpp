@@ -45,9 +45,8 @@ std::string Personagem::setNome(std::string nomePersonagem)
     return nome;
 }
 
-void Personagem::definirAtributos(std::string nomePersonagem, uint valorVidaMaxima, uint valorDefesa, uint valorNivelPersonagem)
+Personagem::Personagem(std::string nomePersonagem, uint valorVidaMaxima, uint valorDefesa, uint valorNivelPersonagem) : nome(nomePersonagem), vidaPersonagem(valorVidaMaxima, valorDefesa), nivelPersonagem(valorNivelPersonagem)
 {
-    setNome(nomePersonagem);
-    setNivelPersonagem(valorNivelPersonagem);
-    vidaPersonagem = Vida(valorVidaMaxima, valorDefesa);
+    setNome(nome);
+    setNivelPersonagem(nivelPersonagem);
 }

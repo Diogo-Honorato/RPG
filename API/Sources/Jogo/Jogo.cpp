@@ -5,9 +5,7 @@
 int main()
 {
 
-    Player player;
-
-    player.definirAtributos("Diogo", 100, 100, 0);
+    Player player = Player("Diogo",100,100,0,0);
 
     std::cout << "Nome do player: " << player.getNome() << std::endl;
 
@@ -18,4 +16,6 @@ int main()
     std::cout << "Defesa: " << player.getVidaPersonagem().getVidaDefesa() << std::endl;
 
     std::cout << "Nivel: " << player.getNivelPersonagem() << std::endl;
+
+    std::cout << "Exp: " << player.getExperiencia() << std::endl;
 }

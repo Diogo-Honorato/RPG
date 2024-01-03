@@ -15,7 +15,7 @@ public:
 public:
     bool setExperiencia(uint valorExperiencia);
 
-    void definirAtributos(std::string nomePersonagem, uint valorVidaMaxima, uint valorDefesa, uint valorNivelPersonagem, uint valorExperiencia);
+    Player(std::string nomePersonagem, uint valorVidaMaxima, uint valorDefesa, uint valorNivelPersonagem, uint valorExperiencia);
 };
 
 #endif
