@@ -15,7 +15,7 @@ std::string Personagem::getNome()
     return nome;
 }
 
-Vida Personagem::getVidaPersonagem()
+Vida *Personagem::getVidaPersonagem()
 {
 
     return vidaPersonagem;
@@ -24,7 +24,8 @@ Vida Personagem::getVidaPersonagem()
 // SETTERS
 bool Personagem::setNivelPersonagem(uint valorNivelPersonagem)
 {
-    if(valorNivelPersonagem < 0){
+    if (valorNivelPersonagem < 0)
+    {
 
         return false;
     }
@@ -35,7 +36,8 @@ bool Personagem::setNivelPersonagem(uint valorNivelPersonagem)
 
 std::string Personagem::setNome(std::string nomePersonagem)
 {
-    if(nomePersonagem.length() < 3){
+    if (nomePersonagem.length() < 3)
+    {
 
         return NULL;
     }
@@ -45,8 +47,15 @@ std::string Personagem::setNome(std::string nomePersonagem)
     return nome;
 }
 
-Personagem::Personagem(std::string nomePersonagem, uint valorVidaMaxima, uint valorDefesa, uint valorNivelPersonagem) : nome(nomePersonagem), vidaPersonagem(valorVidaMaxima, valorDefesa), nivelPersonagem(valorNivelPersonagem)
+Personagem::Personagem(std::string nomePersonagem, uint valorVidaMaxima, uint valorDefesa, uint valorNivelPersonagem)
+    : nome(nomePersonagem), vidaPersonagem(new Vida(valorVidaMaxima, valorDefesa)), nivelPersonagem(valorNivelPersonagem)
 {
     setNome(nome);
     setNivelPersonagem(nivelPersonagem);
+}
+
+Personagem::~Personagem()
+{
+
+    delete vidaPersonagem;
 }

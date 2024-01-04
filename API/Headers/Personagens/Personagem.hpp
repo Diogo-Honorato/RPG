@@ -8,7 +8,7 @@ class Personagem
 
 private:
     std::string nome;
-    Vida vidaPersonagem;
+    Vida *vidaPersonagem;
     uint nivelPersonagem;
 
 public:
@@ -16,7 +16,7 @@ public:
 
     std::string getNome();
 
-    Vida getVidaPersonagem();
+    Vida *getVidaPersonagem();
 
 protected:
     bool setNivelPersonagem(uint valorNivelPersonagem);
@@ -25,6 +25,7 @@ protected:
 
 public:
     Personagem(std::string nomePersonagem, uint valorVidaMaxima, uint valorDefesa, uint valorNivelPersonagem);
+    ~Personagem();
 };
 
 #endif

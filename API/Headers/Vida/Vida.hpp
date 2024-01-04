@@ -10,21 +10,24 @@ private:
 
 public:
     Vida(uint vidaMaxima, uint vidaDefesa);
-    
+
     uint getVidaMaxima();
 
     uint getVidaAtual();
 
     uint getVidaDefesa();
 
-    /*uint calcularDanoSofrido(uint dano);
+    uint calcularDanoSofrido(uint dano);
 
     uint calcularCura(uint valorCura);
-*/
+
 protected:
     bool setVidaMaxima(uint valorVidaMaxima);
 
     bool setVidaDefesa(int valorVidaDefesa);
+
+private:
+    uint calcularDanoDefesa(uint dano);
 };
 
 #endif

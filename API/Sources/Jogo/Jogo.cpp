@@ -7,13 +7,16 @@ int main()
 
     Player player = Player("Diogo",100,100,0,0);
 
-    std::cout << "Nome do player: " << player.getNome() << std::endl;
+    player.getVidaPersonagem()->calcularDanoSofrido(180);
+    player.getVidaPersonagem()->calcularCura(60);
 
-    std::cout << "VidaMax: " << player.getVidaPersonagem().getVidaMaxima() << std::endl;
+    std::cout << "\nNome do player: " << player.getNome() << std::endl;
 
-    std::cout << "VidaAtual: " << player.getVidaPersonagem().getVidaAtual() << std::endl;
+    std::cout << "VidaMax: " << player.getVidaPersonagem()->getVidaMaxima() << std::endl;
 
-    std::cout << "Defesa: " << player.getVidaPersonagem().getVidaDefesa() << std::endl;
+    std::cout << "VidaAtual: " << player.getVidaPersonagem()->getVidaAtual() << std::endl;
+
+    std::cout << "Defesa: " << player.getVidaPersonagem()->getVidaDefesa() << std::endl;
 
     std::cout << "Nivel: " << player.getNivelPersonagem() << std::endl;
 

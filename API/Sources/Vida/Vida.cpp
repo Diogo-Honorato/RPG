@@ -24,7 +24,8 @@ uint Vida::getVidaDefesa()
 // SETTERS
 bool Vida::setVidaMaxima(uint valorVidaMaxima)
 {
-    if(valorVidaMaxima < 1){
+    if (valorVidaMaxima < 1)
+    {
 
         return false;
     }
@@ -37,8 +38,9 @@ bool Vida::setVidaMaxima(uint valorVidaMaxima)
 
 bool Vida::setVidaDefesa(int valorVidaDefesa)
 {
-    
-    if(valorVidaDefesa < 0){
+
+    if (valorVidaDefesa < 0)
+    {
 
         return false;
     }
@@ -47,21 +49,67 @@ bool Vida::setVidaDefesa(int valorVidaDefesa)
     return true;
 }
 
-//Construtores
+// Construtores
 Vida::Vida(uint valorVidaMaxima, uint valorDefesa) : vidaMaxima(valorVidaMaxima), vidaDefesa(valorDefesa)
 {
     setVidaDefesa(vidaDefesa);
     setVidaMaxima(vidaMaxima);
 }
 
-/*
-//Fuçoes Membro
-uint Vida::calcularDanoSofrido(uint dano){
+// Fuçoes Membro
 
+uint Vida::calcularDanoDefesa(uint dano)
+{
 
+    uint danoRestante;
+
+    if (dano == vidaDefesa)
+    {
+
+        return 0;
+    }
+    else if (dano > vidaDefesa)
+    {
+
+        danoRestante = dano - vidaDefesa;
+
+        return danoRestante;
+    }
+
+    return 0;
 }
 
-uint Vida::calcularCura(uint valorCura){
+uint Vida::calcularDanoSofrido(uint dano)
+{
 
+    uint danoAtual;
 
-}*/
+    danoAtual = calcularDanoDefesa(dano);
+
+    if (danoAtual > vidaAtual)
+    {
+
+        vidaAtual = 0;
+        return vidaAtual;
+    }
+
+    vidaAtual = vidaAtual - danoAtual;
+
+    return vidaAtual;
+}
+
+uint Vida::calcularCura(uint valorCura)
+{
+
+    if ((valorCura + vidaAtual) > vidaMaxima)
+    {
+
+        vidaAtual = vidaMaxima;
+
+        return vidaMaxima;
+    }
+
+    vidaAtual = vidaAtual + valorCura;
+
+    return vidaAtual;
+}
