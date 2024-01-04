@@ -37,6 +37,9 @@ run:$(EXECUTABLE)
 leak:$(EXECUTABLE)
 	@valgrind --leak-check=full ./$(EXECUTABLE)
 
+debug:$(EXECUTABLE)
+	gdb ./$(EXECUTABLE)
+
 
 # Limpar arquivos objeto e o executável
 clean:

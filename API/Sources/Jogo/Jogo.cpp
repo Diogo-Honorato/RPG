@@ -10,7 +10,7 @@ int main()
     player.getVidaPersonagem()->calcularDanoSofrido(180);
     player.getVidaPersonagem()->calcularCura(60);
 
-    std::cout << "\nNome do player: " << player.getNome() << std::endl;
+    std::cout << "Nome do player: " << player.getNome() << std::endl;
 
     std::cout << "VidaMax: " << player.getVidaPersonagem()->getVidaMaxima() << std::endl;
 
@@ -19,6 +19,4 @@ int main()
     std::cout << "Defesa: " << player.getVidaPersonagem()->getVidaDefesa() << std::endl;
 
     std::cout << "Nivel: " << player.getNivelPersonagem() << std::endl;
-
-    std::cout << "Exp: " << player.getExperiencia() << std::endl;
 }
