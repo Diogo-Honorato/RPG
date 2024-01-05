@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include "../../Headers/Personagens/Personagem.hpp"
 #include "../../Headers/Personagens/Player.hpp"
 
@@ -12,9 +13,9 @@ int main()
 
     std::cout << "Nome do player: " << player.getNome() << std::endl;
 
-    std::cout << "VidaMax: " << player.getVidaPersonagem()->getVidaMaxima() << std::endl;
+    std::cout << "Vida: " << player.getVidaPersonagem()->getVidaAtual();
 
-    std::cout << "VidaAtual: " << player.getVidaPersonagem()->getVidaAtual() << std::endl;
+    std::cout << "/" << player.getVidaPersonagem()->getVidaMaxima() << std::endl;
 
     std::cout << "Defesa: " << player.getVidaPersonagem()->getVidaDefesa() << std::endl;
 
