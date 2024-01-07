@@ -3,38 +3,97 @@
 #include "../../Headers/Personagens/Personagem.hpp"
 #include "../../Headers/Personagens/Player.hpp"
 
-uint Player::getExperiencia()
+uint Player::getExperienciaMaxima()
 {
 
-    return experiencia;
+    return experienciaMaxima;
 }
 
-Habilidades *Player::getHabilidades(){
+uint Player::getExperienciaAtual()
+{
+
+    return experienciaAtual;
+}
+
+Habilidades *Player::getHabilidades()
+{
 
     return habilidades;
 }
 
-bool Player::setExperiencia(uint valorExperiencia)
+uint Player::setExperienciaMaxima(uint valorExperienciaMaxima)
 {
 
-    if (valorExperiencia < 0)
+    if (valorExperienciaMaxima > LIMITE_EXPERIENCIA)
+    {
+        experienciaMaxima = LIMITE_EXPERIENCIA;
+
+        return experienciaMaxima;
+    }
+    else
     {
 
-        return false;
+        experienciaMaxima = valorExperienciaMaxima;
     }
-    experiencia = valorExperiencia;
 
-    return true;
+    return experienciaMaxima;
 }
 
-Player::Player(std::string nomePersonagem, uint valorVidaMaxima, uint valorDefesa, uint valorNivelPersonagem, uint valorExperiencia)
-    : Personagem(nomePersonagem, valorVidaMaxima, valorDefesa, valorNivelPersonagem), experiencia(valorExperiencia), 
-    habilidades(new Habilidades())
+uint Player::setExperienciaAtual(uint valorExperienciaAtual)
 {
-    setExperiencia(experiencia);
+    if(getNivelPersonagem() == LIMITE_NIVEL_PERSONAGEM && valorExperienciaAtual > LIMITE_EXPERIENCIA){
+
+        experienciaAtual = LIMITE_EXPERIENCIA;
+    }
+    else
+    {
+        experienciaAtual = valorExperienciaAtual;
+    }
+
+    return experienciaAtual;
 }
 
-Player::~Player(){
+uint Player::calcularExperiencia(uint quantidadeExperiencia)
+{
+    uint totalExperiencia = getExperienciaAtual() + quantidadeExperiencia;
+
+    if (totalExperiencia >= getExperienciaMaxima())
+    {
+        setExperienciaAtual(totalExperiencia);
+
+        while (getExperienciaAtual() >= getExperienciaMaxima() && (getNivelPersonagem() < LIMITE_NIVEL_PERSONAGEM || getExperienciaAtual() < LIMITE_EXPERIENCIA))
+        {
+            uint nivelPersonagemAtual = getNivelPersonagem();
+
+            uint experienciaRestante = (getExperienciaAtual() - getExperienciaMaxima());
+
+            setNivelPersonagem(nivelPersonagemAtual + 1);
+
+            setExperienciaMaxima(getExperienciaMaxima() * 1.1);
+
+            setExperienciaAtual(experienciaRestante);
+        }
+
+        return getExperienciaMaxima();
+    }
+    else
+    {
+
+        setExperienciaAtual(getExperienciaAtual() + quantidadeExperiencia);
+
+        return getExperienciaAtual();
+    }
+
+    return quantidadeExperiencia;
+}
+
+Player::Player(std::string nomePersonagem, uint valorVidaMaxima, uint valorDefesa, uint valorNivelPersonagem, uint valorExperienciaMaxima)
+    : Personagem(nomePersonagem, valorVidaMaxima, valorDefesa, valorNivelPersonagem), experienciaMaxima(valorExperienciaMaxima), experienciaAtual(0), habilidades(new Habilidades())
+{
+}
+
+Player::~Player()
+{
 
     delete habilidades;
 }

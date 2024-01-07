@@ -12,6 +12,11 @@ private:
     uint nivelPersonagem;
 
 public:
+    enum
+    {
+        LIMITE_NIVEL_PERSONAGEM = 99
+    };
+
     uint getNivelPersonagem();
 
     std::string getNome();

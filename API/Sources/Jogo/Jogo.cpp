@@ -6,12 +6,20 @@
 int main()
 {
 
-    Player player = Player("Diogo",100,100,0,0);
+    Player player = Player("Diogo");
 
-    player.getVidaPersonagem()->calcularDanoSofrido(180);
-    player.getVidaPersonagem()->calcularCura(60);
+   player.getVidaPersonagem()->calcularDanoSofrido(50);
+   player.getVidaPersonagem()->calcularCura(10);
+   player.getVidaPersonagem()->calcularCura(60);
+   player.calcularExperiencia(60);
+   player.calcularExperiencia(10);
+   player.calcularExperiencia(100);
 
-    std::cout << "Nome do player: " << player.getNome() << std::endl;
+
+        
+    std::cout << "Player: " << player.getNome() << std::endl;
+
+    std::cout << "Nivel: " << player.getNivelPersonagem() << std::endl;
 
     std::cout << "Vida: " << player.getVidaPersonagem()->getVidaAtual();
 
@@ -19,5 +27,7 @@ int main()
 
     std::cout << "Defesa: " << player.getVidaPersonagem()->getVidaDefesa() << std::endl;
 
-    std::cout << "Nivel: " << player.getNivelPersonagem() << std::endl;
+    std::cout << "Exp: " << player.getExperienciaAtual();
+
+    std::cout << "/" << player.getExperienciaMaxima() << std::endl;
 }

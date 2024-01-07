@@ -24,9 +24,9 @@ Vida *Personagem::getVidaPersonagem()
 // SETTERS
 bool Personagem::setNivelPersonagem(uint valorNivelPersonagem)
 {
-    if (valorNivelPersonagem < 0)
+    if (valorNivelPersonagem > LIMITE_NIVEL_PERSONAGEM)
     {
-
+        nivelPersonagem = LIMITE_NIVEL_PERSONAGEM;
         return false;
     }
     nivelPersonagem = valorNivelPersonagem;
