@@ -38,9 +38,9 @@ uint Habilidades::getCarisma()
 uint Habilidades::setVitalidade(uint pontosVitalidade)
 {
 
-    if (vitalidade + pontosVitalidade > 99)
+    if (vitalidade + pontosVitalidade > LIMITE_NIVEL_HABILIDADE)
     {
-        vitalidade = 99;
+        vitalidade = LIMITE_NIVEL_HABILIDADE;
 
         return vitalidade;
     }
@@ -53,10 +53,10 @@ uint Habilidades::setVitalidade(uint pontosVitalidade)
 uint Habilidades::setForca(uint pontosForca)
 {
 
-    if (forca + pontosForca > 99)
+    if (forca + pontosForca > LIMITE_NIVEL_HABILIDADE)
     {
 
-        forca = 99;
+        forca = LIMITE_NIVEL_HABILIDADE;
         return forca;
     }
 
@@ -68,10 +68,10 @@ uint Habilidades::setForca(uint pontosForca)
 uint Habilidades::setResistencia(uint pontosResistencia)
 {
 
-    if (resistencia + pontosResistencia > 99)
+    if (resistencia + pontosResistencia > LIMITE_NIVEL_HABILIDADE)
     {
 
-        resistencia = 99;
+        resistencia = LIMITE_NIVEL_HABILIDADE;
         return resistencia;
     }
 
@@ -83,10 +83,10 @@ uint Habilidades::setResistencia(uint pontosResistencia)
 uint Habilidades::setInteligencia(uint pontosInteligencia)
 {
 
-    if (inteligencia + pontosInteligencia > 99)
+    if (inteligencia + pontosInteligencia > LIMITE_NIVEL_HABILIDADE)
     {
 
-        inteligencia = 99;
+        inteligencia = LIMITE_NIVEL_HABILIDADE;
         return inteligencia;
     }
 
@@ -98,10 +98,10 @@ uint Habilidades::setInteligencia(uint pontosInteligencia)
 uint Habilidades::setAgilidade(uint pontosAgilidade)
 {
 
-    if (agilidade + pontosAgilidade > 99)
+    if (agilidade + pontosAgilidade > LIMITE_NIVEL_HABILIDADE)
     {
 
-        agilidade = 99;
+        agilidade = LIMITE_NIVEL_HABILIDADE;
         return agilidade;
     }
 
@@ -113,10 +113,10 @@ uint Habilidades::setAgilidade(uint pontosAgilidade)
 uint Habilidades::setCarisma(uint pontosCarisma)
 {
 
-    if (carisma + pontosCarisma > 99)
+    if (carisma + pontosCarisma > LIMITE_NIVEL_HABILIDADE)
     {
 
-        carisma = 99;
+        carisma = LIMITE_NIVEL_HABILIDADE;
         
         return carisma;
     }

@@ -14,6 +14,11 @@ private:
     uint carisma;
 
 public:
+    enum
+    {
+        LIMITE_NIVEL_HABILIDADE = 99
+    };
+
     uint getVitalidade();
     uint getForca();
     uint getResistencia();
