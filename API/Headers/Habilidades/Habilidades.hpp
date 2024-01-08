@@ -12,12 +12,15 @@ private:
     uint inteligencia;
     uint agilidade;
     uint carisma;
+    //uint pontosHabilidade;
 
-public:
+protected:
     enum
     {
         LIMITE_NIVEL_HABILIDADE = 99
     };
+
+public:
 
     uint getVitalidade();
     uint getForca();
@@ -32,5 +35,8 @@ public:
     uint setInteligencia(uint pontosInteligencia);
     uint setAgilidade(uint pontosAgilidade);
     uint setCarisma(uint pontosCarisma);
+
+    void distribuirPontosHabilidade(uint pontosHabilidade, uint indentificadorHabilidade);
+
 };
 #endif

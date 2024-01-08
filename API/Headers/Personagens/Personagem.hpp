@@ -10,13 +10,15 @@ private:
     std::string nome;
     Vida *vidaPersonagem;
     uint nivelPersonagem;
+    //uint danoAtaque;
 
-public:
+protected:
     enum
     {
         LIMITE_NIVEL_PERSONAGEM = 99
     };
 
+public:
     uint getNivelPersonagem();
 
     std::string getNome();

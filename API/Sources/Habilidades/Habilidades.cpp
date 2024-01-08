@@ -117,11 +117,46 @@ uint Habilidades::setCarisma(uint pontosCarisma)
     {
 
         carisma = LIMITE_NIVEL_HABILIDADE;
-        
+
         return carisma;
     }
 
     carisma = carisma + pontosCarisma;
 
     return carisma;
+}
+
+void Habilidades::distribuirPontosHabilidade(uint pontosHabilidade, uint indentificadorHabilidade)
+{
+
+    switch (indentificadorHabilidade)
+    {
+    case 1:
+        setVitalidade(pontosHabilidade);
+        break;
+
+    case 2:
+        setForca(pontosHabilidade);
+        break;
+
+    case 3:
+        setResistencia(pontosHabilidade);
+        break;
+
+    case 4:
+        setInteligencia(pontosHabilidade);
+        break;
+
+    case 5:
+        setAgilidade(pontosHabilidade);
+        break;
+
+    case 6:
+        setCarisma(pontosHabilidade);
+        break;
+
+    default:
+        std::cout << "ESCOLHA UMA HABILIDADE VALIDA" << std::endl;
+        break;
+    }
 }
