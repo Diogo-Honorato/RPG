@@ -12,7 +12,7 @@ private:
     uint inteligencia;
     uint agilidade;
     uint carisma;
-    //uint pontosHabilidade;
+    // uint pontosHabilidade;
 
 protected:
     enum
@@ -21,6 +21,7 @@ protected:
     };
 
 public:
+    Habilidades(uint pontosVitalidade = 10, uint pontosForca = 6, uint pontosResistencia = 10, uint pontosInteligencia = 3, uint pontosAgilidade = 5, uint pontosCarisma = 4);
 
     uint getVitalidade();
     uint getForca();
@@ -35,8 +36,5 @@ public:
     uint setInteligencia(uint pontosInteligencia);
     uint setAgilidade(uint pontosAgilidade);
     uint setCarisma(uint pontosCarisma);
-
-    void distribuirPontosHabilidade(uint pontosHabilidade, uint indentificadorHabilidade);
-
 };
 #endif

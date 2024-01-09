@@ -10,7 +10,7 @@ private:
     std::string nome;
     Vida *vidaPersonagem;
     uint nivelPersonagem;
-    //uint danoAtaque;
+    // uint danoAtaque;
 
 protected:
     enum

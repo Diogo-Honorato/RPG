@@ -126,37 +126,7 @@ uint Habilidades::setCarisma(uint pontosCarisma)
     return carisma;
 }
 
-void Habilidades::distribuirPontosHabilidade(uint pontosHabilidade, uint indentificadorHabilidade)
+Habilidades::Habilidades(uint pontosVitalidade, uint pontosForca, uint pontosResistencia, uint pontosInteligencia, uint pontosAgilidade, uint pontosCarisma)
+    : vitalidade(pontosVitalidade), forca(pontosForca), resistencia(pontosResistencia), inteligencia(pontosInteligencia), agilidade(pontosAgilidade), carisma(pontosCarisma)
 {
-
-    switch (indentificadorHabilidade)
-    {
-    case 1:
-        setVitalidade(pontosHabilidade);
-        break;
-
-    case 2:
-        setForca(pontosHabilidade);
-        break;
-
-    case 3:
-        setResistencia(pontosHabilidade);
-        break;
-
-    case 4:
-        setInteligencia(pontosHabilidade);
-        break;
-
-    case 5:
-        setAgilidade(pontosHabilidade);
-        break;
-
-    case 6:
-        setCarisma(pontosHabilidade);
-        break;
-
-    default:
-        std::cout << "ESCOLHA UMA HABILIDADE VALIDA" << std::endl;
-        break;
-    }
 }

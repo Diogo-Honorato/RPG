@@ -10,14 +10,16 @@ class Player : public Personagem
 private:
     uint experienciaMaxima;
     uint experienciaAtual;
-    //uint cargaMaxima;
-    //uint cargaAtual;
+    // uint cargaMaxima;
+    // uint cargaAtual;
     Habilidades *habilidades; //"6 pontos por nivel"
 
 protected:
     enum
     {
-        LIMITE_EXPERIENCIA = 574082
+        LIMITE_EXPERIENCIA = 574082,
+        CONSTANTE_AUMENTO_VIDA = 100,
+        CONSTANTE_AUMENTO_DEFESA = 30
     };
 
 public:
@@ -27,12 +29,13 @@ public:
     uint setExperienciaMaxima(uint valorExperienciaMaxima);
     uint setExperienciaAtual(uint valorExperienciaAtual);
     uint calcularExperiencia(uint quantidadeExperiencia);
-    //uint definirVidaMaximaInicial();
-    //uint definirDefesaInicial();
-    //uint definirCargaMaximaInicial();
-    //uint denifirDanoAtaqueInicial();
-    //uint definirNivelInicial();
-    Player(std::string nomePersonagem = "Player", uint valorVidaMaxima = 100, uint valorDefesa = 33, uint valorNivelPersonagem = 0, uint valorExperienciaMaxima = 50);
+    uint aumentarVidaMaxima(uint pontosHabilidadeVitalidade);
+    uint aumentarDefesa(uint pontosHabilidadeResistencia);
+    // uint definirCargaMaximaInicial();
+    // uint denifirDanoAtaqueInicial();
+    // uint definirNivelInicial();
+    void distribuirPontosHabilidade(uint pontosHabilidade, uint indentificadorHabilidade);
+    Player(std::string nomePersonagem = "Player", uint valorVidaMaxima = 0, uint valorDefesa = 0, uint valorNivelPersonagem = 0, uint valorExperienciaMaxima = 50);
     ~Player();
 };
 

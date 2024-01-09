@@ -21,7 +21,7 @@ public:
 
     uint calcularCura(uint valorCura);
 
-protected:
+public:
     bool setVidaMaxima(uint valorVidaMaxima);
 
     bool setVidaDefesa(int valorVidaDefesa);
